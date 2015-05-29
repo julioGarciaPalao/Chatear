@@ -1,0 +1,12 @@
+C:\Users\CC2-15\Desktop\Programas\chat\chat\bin\chat.dll.config
+C:\Users\CC2-15\Desktop\Programas\chat\chat\bin\chat.dll
+C:\Users\CC2-15\Desktop\Programas\chat\chat\bin\chat.pdb
+C:\Users\CC2-15\Desktop\Programas\chat\chat\obj\Debug\chat.csprojResolveAssemblyReference.cache
+C:\Users\CC2-15\Desktop\Programas\chat\chat\obj\Debug\chat.dll
+C:\Users\CC2-15\Desktop\Programas\chat\chat\obj\Debug\chat.pdb
+G:\chat\chat\bin\chat.dll.config
+G:\chat\chat\bin\chat.dll
+G:\chat\chat\bin\chat.pdb
+G:\chat\chat\obj\Debug\chat.csprojResolveAssemblyReference.cache
+G:\chat\chat\obj\Debug\chat.dll
+G:\chat\chat\obj\Debug\chat.pdb

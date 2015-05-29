@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Chatear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChatearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChatearResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ChatearSoapIn">
+    <wsdl:part name="parameters" element="tns:Chatear" />
+  </wsdl:message>
+  <wsdl:message name="ChatearSoapOut">
+    <wsdl:part name="parameters" element="tns:ChatearResponse" />
+  </wsdl:message>
+  <wsdl:portType name="chatSoap">
+    <wsdl:operation name="Chatear">
+      <wsdl:input message="tns:ChatearSoapIn" />
+      <wsdl:output message="tns:ChatearSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="chatSoap" type="tns:chatSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Chatear">
+      <soap:operation soapAction="http://tempuri.org/Chatear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="chatSoap12" type="tns:chatSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Chatear">
+      <soap12:operation soapAction="http://tempuri.org/Chatear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="chat">
+    <wsdl:port name="chatSoap" binding="tns:chatSoap">
+      <soap:address location="http://localhost:1106/chat.asmx" />
+    </wsdl:port>
+    <wsdl:port name="chatSoap12" binding="tns:chatSoap12">
+      <soap12:address location="http://localhost:1106/chat.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
